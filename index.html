@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Clicker</title>
+	<script src="https://use.fontawesome.com/9574aa32e5.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="clickerApp">
+	<section ng-controller="ClockController">
+		<h2 class="borders">Time</h2>
+		<h3>
+			<i ng-show="time.hours > 17 || time.hours < 8" class="fa fa-moon-o"></i>
+			<i ng-show="time.hours > 7 && time.hours < 18" class="fa fa-sun-o"></i>
+		</h3>
+		<i class="fa fa-clock-o"></i>
+		<time title="You are {{time.hours}} hours, {{time.minutes}} minutes and {{time.seconds}} seconds into day {{time.days}}">
+			<span ng-show="time.hours < 10">0</span><span>{{time.hours}}:</span>
+			<span ng-show="time.minutes < 10">0</span><span>{{time.minutes}}</span>
+		</time>
+		<h4 class=""><i class="fa fa-calendar"></i> Days: {{time.days}}</h4>
+	</section>
+	<section ng-controller="MainController as MC">
+		<article id="resources">
+			<h2 class="borders">Resources</h2>
+			<figure id="trees" class="fa fa-tree fa-4x">
+				<figcaption>{{trees}}</figcaption>
+			</figure>
+			<figure id="houses" class="fa fa-home fa-4x">
+				<figcaption>{{houses}}</figcaption>
+			</figure>
+			<figure id="beds" class="fa fa-bed fa-4x">
+				<figcaption>{{beds}}</figcaption>
+			</figure>
+			<figure id="workers" class="fa fa-users fa-4x">
+				<figcaption>{{workers}}</figcaption>
+			</figure>
+			<figure id="money" class="fa fa-dollar fa-4x">
+				<figcaption>{{money}}</figcaption>
+			</figure>
+		</article>
+		<article id="actions">
+			<h2 class="borders">Actions</h2>
+			<section class="x1">
+				<figure>
+					<button class="fa fa-tree fa-5x green" ng-click="increment('trees')"></button>
+					<figcaption>1 Tree</figcaption>
+					<i class="fa fa-tree green"> x 1</i>
+				</figure>
+				<figure>
+					<button ng-disabled="trees < houseCost" ng-class="{banned: trees < houseCost}" class="fa fa-home fa-5x green" ng-click="increment('houses')"></button>
+					<figcaption>House</figcaption>
+					<i class="fa fa-bed green"> x 4</i> <i class="fa fa-tree red"> x {{houseCost}}</i>
+				</figure>
+				<figure>
+					<button ng-disabled="trees < 1" ng-class="{banned: trees < 1}" class="fa fa-tree fa-5x red" ng-click="increment('money')"></button>
+					<figcaption class="green">+{{treePrice}}$</figcaption>
+					<i class="fa fa-tree red"> x 1</i>
+				</figure>
+				<figure>
+					<button ng-disabled="!bedForWorkers()" ng-class="{banned: !bedForWorkers()}" class="fa fa-user-plus fa-5x green" ng-click="increment('workers')"></button>
+					<figcaption class="red">-{{workerCost}}$</figcaption>
+					<i class="fa fa-user green"> x 1</i>
+				</figure>
+			</section>
+			<section class="x5">
+				<figure>
+					<button class="fa fa-tree fa-5x green" ng-click="increment('trees', 10)"></button>
+					<figcaption>10 Trees</figcaption>
+					<i class="fa fa-tree green"> x 10</i>
+				</figure>
+				<figure>
+					<button ng-disabled="trees < houseCost * 10" ng-class="{banned: trees < houseCost * 10}" class="fa fa-home fa-5x green" ng-click="increment('houses', 10)"></button>
+					<figcaption>10 Houses</figcaption>
+					<i class="fa fa-bed green"> x 40</i> <i class="fa fa-tree red"> x {{houseCost * 10}}</i>
+				</figure>
+				<figure>
+					<button ng-disabled="trees < 10" ng-class="{banned: trees < 10}" class="fa fa-tree fa-5x red" ng-click="increment('money', treePrice)"></button>
+					<figcaption class="green">+{{treePrice * 10}}$</figcaption>
+					<i class="fa fa-tree red"> x 10</i>
+				</figure>
+				<figure>
+					<button ng-disabled="!bedForWorkers(10)" ng-class="{banned: !bedForWorkers(10)}" class="fa fa-user-plus fa-5x green" ng-click="increment('workers', 10)"></button>
+					<figcaption class="red">-{{workerCost * 10}}$</figcaption>
+					<i class="fa fa-user green"> x 10</i>
+				</figure>
+			</section>
+		</article>
+		<article id="upgrades">
+			<h2 class="borders">Upgrades</h2>
+		</article>
+	</section>
+
+	<script type='text/javascript' src='js/angular.min.js'></script>
+	<script type='text/javascript' src='js/app.js'></script>
+</body>
+</html>
