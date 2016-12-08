@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  text-align: center;
+  background-color: snow;
+  font-family: 'Quicksand', sans-serif; }
+
+.borders {
+  border-bottom: solid #444 2px;
+  border-top: solid #444 2px; }
+
+figure {
+  margin: 0 0 1rem 0;
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  border: solid #444 1px;
+  border-radius: 10px;
+  background-color: lightgrey; }
+
+.fa-clock-o {
+  font-size: 1rem; }
+
+.fa-4x {
+  text-shadow: 2px 2px 1px grey; }
+
+figcaption {
+  color: #444;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  font-family: impact;
+  text-shadow: none; }
+
+#resources {
+  padding-bottom: 1rem;
+  background-color: darkgrey; }
+
+h2 {
+  margin-top: 0;
+  text-align: left;
+  padding-left: 5vw; }
+
+.plus {
+  position: absolute;
+  text-align: right; }
+
+#trees {
+  color: sienna; }
+
+#houses {
+  color: dodgerblue; }
+
+#workers {
+  color: gold; }
+
+#money {
+  color: green; }
+
+button {
+  cursor: pointer; }
+
+.banned {
+  opacity: 0.2;
+  cursor: not-allowed; }
+
+.green {
+  color: green; }
+
+.red {
+  color: maroon; }
