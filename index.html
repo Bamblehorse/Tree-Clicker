@@ -50,39 +50,39 @@
 					<i class="fa fa-tree green"> x 1</i>
 				</figure>
 				<figure>
-					<button ng-disabled="trees < houseCost" ng-class="{banned: trees < houseCost}" class="fa fa-home fa-5x green" ng-click="increment('houses')"></button>
+					<button ng-disabled="trees < houseCost" ng-class="{disabled: trees < houseCost}" class="fa fa-home fa-5x green" ng-click="increment('houses')"></button>
 					<figcaption>House</figcaption>
 					<i class="fa fa-bed green"> x 4</i> <i class="fa fa-tree red"> x {{houseCost}}</i>
 				</figure>
 				<figure>
-					<button ng-disabled="trees < 1" ng-class="{banned: trees < 1}" class="fa fa-tree fa-5x red" ng-click="increment('money')"></button>
+					<button ng-disabled="trees < 1" ng-class="{disabled: trees < 1}" class="fa fa-tree fa-5x red" ng-click="increment('money')"></button>
 					<figcaption class="green">+{{treePrice}}$</figcaption>
 					<i class="fa fa-tree red"> x 1</i>
 				</figure>
 				<figure>
-					<button ng-disabled="!bedForWorkers()" ng-class="{banned: !bedForWorkers()}" class="fa fa-user-plus fa-5x green" ng-click="increment('workers')"></button>
+					<button ng-disabled="!bedForWorkers()" ng-class="{disabled: !bedForWorkers()}" class="fa fa-user-plus fa-5x green" ng-click="increment('workers')"></button>
 					<figcaption class="red">-{{workerCost}}$</figcaption>
 					<i class="fa fa-user green"> x 1</i>
 				</figure>
 			</section>
-			<section class="x5">
+			<section class="x10">
 				<figure>
-					<button class="fa fa-tree fa-5x green" ng-click="increment('trees', 10)"></button>
+					<button ng-enabled="upgrades.x10.trees" ng-class="{disabled: !upgrades.x10.trees}" class="fa fa-tree fa-5x green" ng-click="increment('trees', 10)"></button>
 					<figcaption>10 Trees</figcaption>
 					<i class="fa fa-tree green"> x 10</i>
 				</figure>
 				<figure>
-					<button ng-disabled="trees < houseCost * 10" ng-class="{banned: trees < houseCost * 10}" class="fa fa-home fa-5x green" ng-click="increment('houses', 10)"></button>
+					<button ng-disabled="trees < houseCost * 10" ng-class="{disabled: trees < houseCost * 10}" class="fa fa-home fa-5x green" ng-click="increment('houses', 10)"></button>
 					<figcaption>10 Houses</figcaption>
 					<i class="fa fa-bed green"> x 40</i> <i class="fa fa-tree red"> x {{houseCost * 10}}</i>
 				</figure>
 				<figure>
-					<button ng-disabled="trees < 10" ng-class="{banned: trees < 10}" class="fa fa-tree fa-5x red" ng-click="increment('money', treePrice)"></button>
+					<button ng-disabled="trees < 10" ng-class="{disabled: trees < 10}" class="fa fa-tree fa-5x red" ng-click="increment('money', treePrice)"></button>
 					<figcaption class="green">+{{treePrice * 10}}$</figcaption>
 					<i class="fa fa-tree red"> x 10</i>
 				</figure>
 				<figure>
-					<button ng-disabled="!bedForWorkers(10)" ng-class="{banned: !bedForWorkers(10)}" class="fa fa-user-plus fa-5x green" ng-click="increment('workers', 10)"></button>
+					<button ng-disabled="!bedForWorkers(10)" ng-class="{disabled: !bedForWorkers(10)}" class="fa fa-user-plus fa-5x green" ng-click="increment('workers', 10)"></button>
 					<figcaption class="red">-{{workerCost * 10}}$</figcaption>
 					<i class="fa fa-user green"> x 10</i>
 				</figure>
@@ -90,6 +90,13 @@
 		</article>
 		<article id="upgrades">
 			<h2 class="borders">Upgrades</h2>
+			<section class="x10">
+				<figure>
+					<button ng-disabled="money < 1000" ng-class="{'unlocked fa-unlock-alt': upgrades.x10.trees, 'fa-lock': !upgrades.x10.trees, 'disabled': money < 1000}" class="green fa fa-5x" ng-click="upgrade('trees', 'x10', 'money', 1000)"></button>
+					<figcaption>10 x Trees</figcaption>
+					<i class="fa fa-dollar red"> x 1000</i>
+				</figure>
+			</section>
 		</article>
 	</section>
 
