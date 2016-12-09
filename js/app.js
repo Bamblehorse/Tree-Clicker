@@ -94,5 +94,14 @@ app.controller('MainController', ['$scope', '$interval', 'ClockFactory',
       }
       $scope[resource] += amount;
     };
+    $scope.upgrades = {
+      x10 : {
+        trees: false
+      }
+    };
+    $scope.upgrade = function(upgrade, multiplier, resource, cost) {
+      $scope.upgrades[multiplier][upgrade] = true;
+      $scope[resource] -= cost;
+    };
   }
 ]);
