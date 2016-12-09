@@ -75,9 +75,13 @@ button {
 	cursor: pointer;
 }
 
-.banned {
+.disabled {
 	opacity: 0.2;
 	cursor: not-allowed;
+}
+
+.unlocked {
+	cursor: auto;
 }
 
 
