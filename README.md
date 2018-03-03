@@ -4,6 +4,9 @@ AngularJS clicker game built with FontAwesome icons, Google Fonts, SASS and gulp
 
 You can play the game on [Github Pages](https://jonathandwood.github.io/Tree-Clicker/)
 
+![image](https://user-images.githubusercontent.com/20028526/36935806-5b8c7cc8-1eca-11e8-856e-889dc1850e86.png)
+
+
 ## TODOS
 
 - [ ] Sections
