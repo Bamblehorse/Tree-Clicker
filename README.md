@@ -2,7 +2,7 @@
 
 AngularJS clicker game built with FontAwesome icons, Google Fonts, SASS and gulp for the workflow.
 
-You can play the game on [Github Pages](https://jonathandwood.github.io/Tree-Clicker/)
+You can play the game on [Github Pages](https://bamblehorse.github.io/Tree-Clicker/)
 
 ![image](https://user-images.githubusercontent.com/20028526/36935806-5b8c7cc8-1eca-11e8-856e-889dc1850e86.png)
 
@@ -27,7 +27,7 @@ Navigate to a folder on your machine where you are happy to place the project fo
 
 Open up your command-line interface and type:
 ```
-git clone https://github.com/JonathanDWood/Tree-Clicker/
+git clone https://github.com/Bamblehorse/Tree-Clicker/
 ```
 Now change directories into the project directory:
 ```
@@ -52,7 +52,7 @@ If the project hasn't automatically opened in your browser, [click here.](http:/
 * [Npm/Node.js](https://nodejs.org/en/download/) and [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) - As above
 
 ## Author
-* **Jonathan Wood** - [Github](https://github.com/JonathanDWood/)
+* **Jonathan Wood** - [Github](https://github.com/Bamblehorse)
 
 ## License
 See the [license](LICENSE) file for details
