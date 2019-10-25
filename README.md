@@ -1,5 +1,5 @@
 # Tree-Clicker
-
+ 
 AngularJS clicker game built with FontAwesome icons, Google Fonts, SASS and gulp for the workflow.
 
 You can play the game on [Github Pages](https://bamblehorse.github.io/Tree-Clicker/)
